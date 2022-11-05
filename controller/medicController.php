@@ -14,7 +14,7 @@
 
         function __construct(){
             $this->medicView = new MedicView();
-            $this->musicModel = new MedicModel();
+            //$this->musicModel = new MedicModel();
             $this->authHelper = new AuthHelper();
         }
 

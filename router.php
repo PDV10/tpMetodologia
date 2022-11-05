@@ -13,13 +13,13 @@
 
     $params = explode("/", $action);
 
-   //$medicController = new MedicController();
+   $medicController = new MedicController();
 
     switch ($params[0]) {
         case 'home':
-            showHome();
+            $medicController->showHome();
             break; 
         default:
-            echo('error')
+            echo('error');
             break; 
     }
