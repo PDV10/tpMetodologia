@@ -7,3 +7,12 @@
 body{
     background-color:#5fb6d0;
 }
+
+.nav-var {
+    background-color: black;
+    height: 40px;
+}
+.footer-sect{
+    background-color: black;
+    height: 40px;
+}
