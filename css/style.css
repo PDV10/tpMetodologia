@@ -6,6 +6,7 @@
 
 body{
     background-color:#5fb6d0;
+    height: 100%;
 }
 
 .nav-var {
@@ -25,4 +26,10 @@ background-color: rgba(217, 217, 217, 1);
 tr{
     border-bottom: solid 2px black;
     border-color: black;
+}
+.container{
+    height: 90vh;
+    background-image: url("../assets/img/medicos.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
 }
