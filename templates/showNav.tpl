@@ -1,3 +1,3 @@
-<nav class="nav-var">
-    <p class=" text-grey text-center">Nav Bar aca va la barra de navegacion</p>
+<nav class="nav-var d-flex">
+    <img src="{BASE_URL}/assets/logo_ligth.png" alt="logo">
 </nav>

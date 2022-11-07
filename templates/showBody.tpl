@@ -1,1 +1,1 @@
-<p>hola mundo</p>
+<img src="{BASE_URL}/assets/medicos.png"/>

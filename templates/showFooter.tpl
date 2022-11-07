@@ -1,7 +1,7 @@
-<footer class="footer-sect">
-    <div class="container d-flex align-item-center justify-content-center mt-3 text-white">
-        <p class="footer text-center text-dark"> turno facil 2022</p>
-    </div>
+<footer class="footer-sect d-flex align-item-center justify-content-center text-align-center">
+    {* <div class="container d-flex align-item-center justify-content-center mt-3 text-white"> *}
+        <p class="footer text-center text-ligth"> turno facil 2022</p>
+    {* </div> *}
 </footer>
 
 
