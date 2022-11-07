@@ -21,7 +21,7 @@
             break; 
         case 'turnos':
             $medicController->showViewMedic();
-            
+            break;
         case 'login':
             $medicController->showLogin();
             break;
