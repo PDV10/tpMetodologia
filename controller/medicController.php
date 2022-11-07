@@ -25,6 +25,9 @@
         function showViewMedic(){
             $this->medicView->showViewMedic();
         }
+        function showLogin(){
+            $this->medicView->showLogin();
+        }
 
         
     }

@@ -21,6 +21,9 @@
             break; 
         case 'turnos':
             $medicController->showViewMedic();
+            
+        case 'login':
+            $medicController->showLogin();
             break;
         default:
             echo('error');
