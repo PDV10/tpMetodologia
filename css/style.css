@@ -16,3 +16,13 @@ body{
     background-color: #1E1E1E;
     height: 60px;
 }
+
+.colorFondo{
+background-color: rgba(217, 217, 217, 1);
+}
+
+
+tr{
+    border-bottom: solid 2px black;
+    border-color: black;
+}

@@ -19,6 +19,9 @@
         case 'home':
             $medicController->showHome();
             break; 
+        case 'turnos':
+            $medicController->showViewMedic();
+            break;
         default:
             echo('error');
             break; 

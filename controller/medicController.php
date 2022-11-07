@@ -22,5 +22,9 @@
             $this->medicView->showHome();
         }
 
+        function showViewMedic(){
+            $this->medicView->showViewMedic();
+        }
+
         
     }

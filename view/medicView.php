@@ -11,6 +11,10 @@ class MedicView{
     function showHome(){
         $this->smarty->display("templates/showHome.tpl");
     }
+
+    function showViewMedic(){
+        $this->smarty->display("templates/viewMedico.tpl");
+    }
         
         
 }
