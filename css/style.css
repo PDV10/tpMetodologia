@@ -27,7 +27,7 @@ tr{
     border-bottom: solid 2px black;
     border-color: black;
 }
-.container{
+.bgMedico{
     height: 90vh;
     background-image: url("../assets/img/medicos.png");
     background-position: 100% 100%;
