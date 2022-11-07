@@ -6,7 +6,11 @@
 
 body{
     background-color:#5fb6d0;
-    height: 100%;
+    background-image: url("../assets/img/medicos.png");
+    background-position: 120% 100%;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .nav-var {
@@ -18,8 +22,24 @@ body{
     height: 60px;
 }
 .container{
-    height: 90vh;
-    background-image: url("../assets/img/medicos.png");
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
+    height: 100vh;
+    /* background-image: url("../assets/img/medicos.png");
+    background-position: 140% 100%;
+    background-repeat: no-repeat; */
+}
+
+.login{
+    height: 100vh;
+}
+
+
+.logo{
+    width: 50%;
+}
+
+.letra_blanca{
+    color: white;
+}
+h1{
+    font-size: 80px;
 }

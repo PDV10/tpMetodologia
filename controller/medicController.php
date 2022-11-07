@@ -22,5 +22,9 @@
             $this->medicView->showHome();
         }
 
+        function showLogin(){
+            $this->medicView->showLogin();
+        }
+
         
     }

@@ -18,7 +18,10 @@
     switch ($params[0]) {
         case 'home':
             $medicController->showHome();
-            break; 
+            
+        case 'login':
+            $medicController->showLogin();
+            break;
         default:
             echo('error');
             break; 
