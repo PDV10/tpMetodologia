@@ -9,7 +9,7 @@ class MedicView{
     }
 
     function showHome(){
-        $this->smarty->display("templates/showHome.tpl");
+        $this->smarty->display("templates/medico_home/showHome.tpl");
     }
         
         

@@ -6,6 +6,7 @@
 
 body{
     background-color:#5fb6d0;
+    height: 100%;
 }
 
 .nav-var {
@@ -15,4 +16,7 @@ body{
 .footer-sect{
     background-color: #1E1E1E;
     height: 60px;
+}
+.container{
+    height: 100vh;
 }

@@ -1,1 +1,0 @@
-<img src="{BASE_URL}/assets/medicos.png"/>
