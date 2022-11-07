@@ -1,6 +1,6 @@
-<footer>
+<footer class="footer-sect">
     <div class="container d-flex align-item-center justify-content-center mt-3 text-white">
-        <p class="footer"> turno facil 2022</p>
+        <p class="footer text-center text-dark"> turno facil 2022</p>
     </div>
 </footer>
 
