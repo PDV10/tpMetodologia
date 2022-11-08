@@ -20,8 +20,12 @@
             $medicController->showHome();
             break; 
         case 'turnos':
+            $controller = new medicController();
             $medicController->showViewMedic();
             break;
+        case 'searchTurns':
+            $controller = new medicController();
+            $medicController->showSearchTurns();
         default:
             echo('error');
             break; 

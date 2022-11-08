@@ -14,7 +14,7 @@
 
         function __construct(){
             $this->medicView = new MedicView();
-            //$this->musicModel = new MedicModel();
+            $this->medicModel = new MedicModel();
             $this->authHelper = new AuthHelper();
         }
 
@@ -22,9 +22,26 @@
             $this->medicView->showHome();
         }
 
+        
         function showViewMedic(){
-            $this->medicView->showViewMedic();
+            $turns = $this->medicModel->getTurns();
+            $this->medicView->showViewMedic($turns);
         }
 
-        
+        function showSearchTurns(){
+             if ( !empty($_GET["inputDesde"]) && 
+                  !empty($_GET["inputHasta"])  &&
+                  !empty($_GET["parteDelDia"])){
+              
+                    $dateUntil = $_REQUEST['inputDesde'];
+                    $dateSince = $_REQUEST['inputHasta'];
+                    $partOfDay = $_REQUEST['parteDelDia'];
+            
+                    $searchTurns = $this->medicModel->getSearchTurns($dateUntil,$dateSince,$partOfDay);
+
+                    $this->medicView->showViewMedic($searchTurns);
+             }else{  
+                     $this->medicView->showError();
+             }   
+        }
     }
