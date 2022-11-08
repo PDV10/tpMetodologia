@@ -28,6 +28,9 @@
         function showLogin(){
             $this->medicView->showLogin();
         }
+        function logOut(){
+            $this->authHelper->logout();
+        }
 
         
     }
