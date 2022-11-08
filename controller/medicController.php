@@ -30,6 +30,9 @@
         function showLogin(){
             $this->medicView->showLogin();
         }
+        function logOut(){
+            $this->authHelper->logout();
+        }
 
         function login(){
             if(!empty($_POST['user']) && !empty($_POST['password'])){
