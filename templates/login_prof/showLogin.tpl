@@ -3,10 +3,10 @@
 <div class="container d-flex bgMedico">
     <div class="w-50 d-flex login flex-column justify-content-around">
         <div>
-            <div class="logo d-flex">
-                <img src="{BASE_URL}/assets/img/logo.png" class="w-50 align-self-auto">
-                <div  class="align-self-end">
-                    <h2 class="letra_blanca w-100 ">Portal para Profecionales</h2>
+            <div class="logo d-flex ">
+                <img src="{BASE_URL}/assets/img/logo.png" class="w-25 img-fluid">
+                <div  class="d-flex flex-column ">
+                    <h2 class="letra_blanca w-100 ">Portal para Profesionales</h2>
                     <h1 class="p-1">TurnoFacil</h1>
                 </div>
             </div>

@@ -6,9 +6,6 @@
 
 body{
     background-color:#5fb6d0;
-    background-position: 120% 100%;
-    background-size: 65%;
-    background-repeat: no-repeat;
     height: 100vh;
 }
 
@@ -27,9 +24,18 @@ body{
 .bgMedico{
     height: 94vh;
     background-image: url("../assets/img/medicos.png");
-    background-position: 100% 100%;
+    background-position: 120% 100%;
+    background-size: 65%;
     background-repeat: no-repeat;
 }
 tr{
     border-color: black;
+}
+
+.letra_blanca{
+    color: white;
+}
+
+h1{
+    font-size: 100px;
 }
