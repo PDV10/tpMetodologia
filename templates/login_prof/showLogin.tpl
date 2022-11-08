@@ -1,6 +1,6 @@
 {include file="templates/showHeader.tpl"}
 
-<div class="container">
+<div class="container d-flex bgMedico">
     <div class="w-50 d-flex login flex-column justify-content-around">
         <div>
             <div class="logo d-flex">
@@ -27,5 +27,8 @@
             </form>
         </div>
     </div>
+
     
 </div>
+
+{include file="templates/showFooter.tpl"}
