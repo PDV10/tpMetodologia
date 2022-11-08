@@ -16,14 +16,20 @@ if (!empty($_REQUEST['action'])) {
 $medicController = new MedicController();
 
     switch ($params[0]) {
-        case 'home':
-            $medicController->showHome();
+        case 'profesionales':
+            $medicController->showLogin();
             break; 
         case 'turnos':
             $medicController->showViewMedic();
             break;
-        case 'login':
-            $medicController->showLogin();
+        case 'logOut':
+            $medicController->logOut();
+            break;
+        case 'loginMedico':
+            $medicController->login();
+            break;
+        case 'searchTurns':
+            $medicController->showSearchTurns();
             break;
         default:
             echo('error');
