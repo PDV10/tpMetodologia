@@ -29,7 +29,7 @@ class MedicView
     function showViewMedic($turns)
     {
         $this->smarty->assign('turns', $turns);
-        $this->smarty->display("templates/viewMedico.tpl");
+        $this->smarty->display("templates/medico_home/viewMedico.tpl");
     }
 
 
