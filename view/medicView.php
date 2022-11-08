@@ -18,6 +18,11 @@ class MedicView{
     function showLogin(){
         $this->smarty->display("templates/login_prof/showLogin.tpl");
     }
+    
+    function showError($msg){
+        $this->smarty->assign("msg", $msg);
+        $this->smarty->display("templates/showError.tpl");
+    }
         
         
 }

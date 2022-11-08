@@ -1,6 +1,8 @@
 {include file="templates/showHeader.tpl"}
-    <div class="container">
-        <div class="card text-center text-white bg-dark mb-3">
+{include file="templates/showNav.tpl"}
+
+    <div class="container ">
+        <div class="card text-center text-white bg-dark mb-5 mt-5">
             <div class="card-header">
                 <h1>Ups Algo Salio Mal 😕</h1>
             </div>
@@ -10,4 +12,5 @@
             </div>
         </div>
     </div>
+
 {include file="templates/showFooter.tpl"}
