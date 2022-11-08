@@ -28,15 +28,15 @@ class MedicController
 
     function showViewMedic()
     {
-        //ESTO NO ANDA... ($_SESSION['USER_ID']) esta vacio... ves?
         if (!empty($_SESSION['USER_ID'])) {
 
-            $id_user = $_SESSION['USER_ID'];
+            $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
-            $turns = $this->medicModel->getTurns($id_user);
-            $this->medicView->showViewMedic($turns);
+            $turns = $this->medicModel->getTurns($user->id_medico);
+            $this->medicView->showViewMedic($turns,$user);
         }
     }
+    
     function showLogin()
     {
         $this->medicView->showLogin();
@@ -81,8 +81,9 @@ class MedicController
                 $id_user = $_SESSION['USER_ID'];
 
                 $searchTurns = $this->medicModel->getSearchTurns($id_user, $dateUntil, $dateSince, $partOfDay);
+                $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
-                $this->medicView->showViewMedic($searchTurns);
+                $this->medicView->showViewMedic($searchTurns,$user);
             }
         } else {
             $this->medicView->showError("Error, CAMPOS INCOMPLETOS!");

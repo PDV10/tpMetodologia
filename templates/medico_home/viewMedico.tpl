@@ -5,11 +5,11 @@
 <div class="col-5 d-flex flex-row mb-5 container-sm text-center shadow-lg colorFondo rounded-end">
     <div class="container">
         <h3>Medico</h3>
-        <h4>Dr. Carlos Salvador Bilardo</h4>
-        <p>Medico Mundialista</p>
+        <h4>Dr. {$user->nombre} {$user->apellido}</h4>
+        <p>{$user->especialidad}</p>
     </div>
     <div class="container">
-        <img src="assets/bilardooooo.jpg" alt="salvador bilardo" width=100px class="pt-2 rounded-circle">
+        <img src="assets/img/Medico.jpg" alt="salvador bilardo" width=100px class="pt-2 rounded-circle">
     </div>
 </div>
 <div class="container">
