@@ -25,6 +25,9 @@
         case 'login':
             $medicController->showLogin();
             break;
+        case 'logout':
+            $medicController->logOut();
+            break;
         default:
             echo('error');
             break; 
