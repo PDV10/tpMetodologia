@@ -51,13 +51,15 @@
             </tr>
         </thead>
         <tbody>
-        {foreach from=$turns item=$turn}
-            <tr>
-                <td>{$turn->hora}</td>
-                <td>{$turn->dia}</td>
-                <td>{$turn->id_paciente}</td>
-            </tr>
-         {/foreach}
+   
+            {foreach from=$turns item=$turn}
+                <tr>
+                    <td>{$turn->hora}</td>
+                    <td>{$turn->dia}</td>
+                    <td>{$turn->nombre} {$turn->apellido}</td>
+                </tr>
+            {/foreach}
+
         </tbody>
     </table>
 </div>
