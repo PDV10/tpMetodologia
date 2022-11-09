@@ -1,7 +1,6 @@
 {include file="templates/showHeader.tpl"}
-{include file="templates/showNav.tpl"}
 
-    <div class="container ">
+    <div class="container">
         <div class="card text-center text-white bg-dark mb-5 mt-5">
             <div class="card-header">
                 <h1>Ups Algo Salio Mal 😕</h1>

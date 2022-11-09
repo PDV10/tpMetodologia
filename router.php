@@ -11,27 +11,27 @@ if (!empty($_REQUEST['action'])) {
     $action = 'profesionales';
 }
 
-    $params = explode("/", $action);
+$params = explode("/", $action);
 
 $medicController = new MedicController();
 
-    switch ($params[0]) {
-        case 'profesionales':
-            $medicController->showLogin();
-            break; 
-        case 'turnos':
-            $medicController->showViewMedic();
-            break;
-        case 'logOut':
-            $medicController->logOut();
-            break;
-        case 'loginMedico':
-            $medicController->login();
-            break;
-        case 'searchTurns':
-            $medicController->showSearchTurns();
-            break;
-        default:
-            echo('error');
-            break; 
-    }
+switch ($params[0]) {
+    case 'profesionales':
+        $medicController->showLogin();
+        break;
+    case 'turnos':
+        $medicController->showViewMedic();
+        break;
+    case 'logOut':
+        $medicController->logOut();
+        break;
+    case 'loginMedico':
+        $medicController->login();
+        break;
+    case 'searchTurns':
+        $medicController->showSearchTurns();
+        break;
+    default:
+        $medicController->showError();
+        break;
+}

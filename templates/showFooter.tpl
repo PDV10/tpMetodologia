@@ -1,4 +1,4 @@
-<footer class="footer-sect d-flex align-item-center justify-content-center">
+<footer class="footer-sect d-flex align-items-center justify-content-center footer_medicos">
     {* <div class="container d-flex align-item-center justify-content-center mt-3 text-white"> *}
         <p class="footer text-center text-white mt-auto mb-auto">Turno facil 2022</p>
     {* </div> *}

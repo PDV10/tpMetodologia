@@ -33,10 +33,10 @@ class MedicController
             $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
             $turns = $this->medicModel->getTurns($user->id_medico);
-            $this->medicView->showViewMedic($turns,$user);
+            $this->medicView->showViewMedic($turns, $user);
         }
     }
-    
+
     function showLogin()
     {
         $this->medicView->showLogin();
@@ -83,10 +83,15 @@ class MedicController
                 $searchTurns = $this->medicModel->getSearchTurns($id_user, $dateUntil, $dateSince, $partOfDay);
                 $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
-                $this->medicView->showViewMedic($searchTurns,$user);
+                $this->medicView->showViewMedic($searchTurns, $user);
             }
         } else {
             $this->medicView->showError("Error, CAMPOS INCOMPLETOS!");
         }
+    }
+
+    function showError()
+    {
+        $this->medicView->showError("Error 404 URL no reconocida");
     }
 }
