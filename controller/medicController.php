@@ -25,20 +25,20 @@ class MedicController
         $this->medicView->showHome();
     }
 
-
     function showViewMedic()
     {
-        if (!empty($_SESSION['USER_ID'])) {
+        //Barrera de login
+        $this->authHelper->checkLoggedIn();
 
-            $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
+        $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
-            $turns = $this->medicModel->getTurns($user->id_medico);
-            $this->medicView->showViewMedic($turns, $user);
-        }
+        $turns = $this->medicModel->getTurns($user->id_medico);
+        $this->medicView->showViewMedic($turns, $user);
     }
 
     function showLogin()
     {
+        //como checkear que un usuario logueado no acceda al login
         $this->medicView->showLogin();
     }
     function logOut()
@@ -67,6 +67,9 @@ class MedicController
 
     function showSearchTurns()
     {
+        //barrera del login
+        $this->authHelper->checkLoggedIn();
+
         if (
             !empty($_GET["inputDesde"]) &&
             !empty($_GET["inputHasta"])  &&
