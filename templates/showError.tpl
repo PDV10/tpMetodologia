@@ -7,7 +7,7 @@
             </div>
             <div class="card-body">
                 <h4 class="error mb-5">{$msg|capitalize}</h4>
-                <a href="profesionales" class="btn btn-outline-info">Volver al inicio</a>
+                <a href="turnos" class="btn btn-outline-info">Volver al inicio</a>
             </div>
         </div>
     </div>
