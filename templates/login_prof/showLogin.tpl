@@ -18,10 +18,10 @@
         <div class="m-auto" >
             <form action="loginMedico" method="POST" class="d-flex flex-column">
                 <div class="mb-3 ">
-                    <input class="form-control text-center fs-3" aria-describedby="emailHelp" name="user" placeholder="ingresar usuario" >
+                    <input required class="form-control text-center fs-3" aria-describedby="emailHelp" name="user" placeholder="ingresar usuario" >
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control text-center fs-3" id="exampleInputPassword1" name="password" placeholder="ingresar contraseña" >
+                    <input required type="password" class="form-control text-center fs-3" id="exampleInputPassword1" name="password" placeholder="ingresar contraseña" >
                 </div>
                 <button type="submit" class="btn btn-primary fs-3">Entrar</button>
             </form>
