@@ -42,7 +42,8 @@
             </button>
         </div>
     </form>
-    <table class="table table-hover mt-3">
+    {if {$turns|count} > 0}
+          <table class="table table-hover mt-3">
         <thead>
             <tr>
                 <th scope="col">Hora</th>
@@ -51,7 +52,6 @@
             </tr>
         </thead>
         <tbody>
-   
             {foreach from=$turns item=$turn}
                 <tr>
                     <td>{$turn->hora}</td>
@@ -59,9 +59,20 @@
                     <td>{$turn->nombre} {$turn->apellido}</td>
                 </tr>
             {/foreach}
-
         </tbody>
     </table>
+    {else}
+        <div class="card text-center text-white bg-dark mb-5 mt-5">
+            <div class="card-header">
+                <h2> Dr. {$user->nombre} {$user->apellido}</h2>
+            </div>
+            <div class="card-body">
+                <h4 class="error mb-5">Por ahora no tiene turnos asignados.</h4>
+                   <footer class="blockquote-footer"> <cite title="Source Title">Que tenga un gran dia.</cite></footer>
+            </div>
+        </div>
+    {/if}
+  
 </div>
 
 {include file="templates/showFooter.tpl"}
