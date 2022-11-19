@@ -1,6 +1,6 @@
 <?php
 require_once('controller/medicController.php');
-
+require_once('controller/secretaryController.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 define('turnos', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/turnos');
@@ -13,7 +13,9 @@ if (!empty($_REQUEST['action'])) {
 
 $params = explode("/", $action);
 
+//Controladores
 $medicController = new MedicController();
+$secretaryController = new SecretaryController();
 
 switch ($params[0]) {
     case 'profesionales':

@@ -1,11 +1,9 @@
 <?php
-/* internos */
+/*Requerimientos internos */
 require_once('model/medicModel.php');
 require_once('view/medicView.php');
-/* helper */
+/* helpers */
 require_once('helpers/auth.helper.php');
-/* externos */
-require_once('model/medicModel.php');
 
 class MedicController
 {
