@@ -26,7 +26,7 @@ class MedicController
     function showViewMedic()
     {
         //Barrera de login
-        $this->authHelper->checkLoggedIn();
+        $this->authHelper->checkLoggedIn(MEDICO);
 
         $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
@@ -66,7 +66,7 @@ class MedicController
     function showSearchTurns()
     {
         //barrera del login
-        $this->authHelper->checkLoggedIn();
+        $this->authHelper->checkLoggedIn(MEDICO);
 
         if (
             !empty($_GET["inputDesde"]) &&

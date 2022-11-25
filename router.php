@@ -1,7 +1,22 @@
 <?php
+
+/**
+ * CONTROLLERS
+ */
 require_once('controller/medicController.php');
 require_once('controller/secretaryController.php');
 
+/**
+ * ROLES
+ */
+define('ADMIN', 1);
+define('SECRETARIA', 3);
+define('MEDICO', 5);
+define('PACIENTE', 7);
+
+/**
+ * BASE URL
+ */
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 define('turnos', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/turnos');
 

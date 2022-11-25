@@ -1,8 +1,8 @@
 <?php
-//Requerimientos internos
+/*Requerimientos internos*/
 require_once('model/secretaryModel.php');
 require_once('view/secretaryView.php');
-// Helpers
+/*Helpers*/
 require_once('helpers/auth.helper.php');
 
 class SecretaryController
