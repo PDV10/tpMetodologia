@@ -9,10 +9,8 @@ require_once('controller/secretaryController.php');
 /**
  * ROLES
  */
-define('ADMIN', 1);
-define('SECRETARIA', 3);
-define('MEDICO', 5);
-define('PACIENTE', 7);
+define('SECRETARIA', 'S');
+define('MEDICO', 'M');
 
 /**
  * BASE URL

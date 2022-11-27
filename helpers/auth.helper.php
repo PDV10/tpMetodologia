@@ -24,12 +24,10 @@ class AuthHelper
         if (empty($_SESSION['USER_ID'])) {
             header("Location: " . BASE_URL . 'profesionales');
             die();
-        }
-        /*  DESCOMENTAR CUANDO ESTE LISTA LA TPM-103
-            else if ($_SESSION['USER_ROL'] > $rol) {
+        } else if ($_SESSION['USER_ROL'] != $rol) {
             $this->errorView->showError("Usted no tiene permisos suficientes");
             die();
-        }*/
+        }
     }
 
     public function login($user)
@@ -37,10 +35,7 @@ class AuthHelper
 
         $_SESSION['USER_ID'] = $user->id_usuario;
         $_SESSION['USER_EMAIL'] = $user->user;
-
-        /** $$ CUANDO SE ESTABILICE LA BBDD (TPM-103)
-         *      $_SESSION['USER_ROL'] = $user->rol;
-         */
+        $_SESSION['USER_ROL'] = $user->tipo;
     }
 
     function logout()

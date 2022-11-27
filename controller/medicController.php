@@ -27,7 +27,7 @@ class MedicController
     {
         //Barrera de login
         $this->authHelper->checkLoggedIn(MEDICO);
-        
+
         $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
         $turns = $this->medicModel->getTurns($user->id_usuario);
