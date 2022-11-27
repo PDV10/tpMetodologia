@@ -5,6 +5,7 @@
  */
 require_once('controller/medicController.php');
 require_once('controller/secretaryController.php');
+require_once('controller/loginController.php');
 
 /**
  * ROLES
@@ -29,19 +30,20 @@ $params = explode("/", $action);
 //Controladores
 $medicController = new MedicController();
 $secretaryController = new SecretaryController();
+$loginController = new LoginController();
 
 switch ($params[0]) {
     case 'profesionales':
-        $medicController->showLogin();
+        $loginController->showLogin();
         break;
     case 'turnos':
         $medicController->showViewMedic();
         break;
     case 'logOut':
-        $medicController->logOut();
+        $loginController->logOut();
         break;
-    case 'loginMedico':
-        $medicController->login();
+    case 'logIn':
+        $loginController->login();
         break;
     case 'searchTurns':
         $medicController->showSearchTurns();

@@ -34,35 +34,6 @@ class MedicController
         $this->medicView->showViewMedic($turns, $user);
     }
 
-    function showLogin()
-    {
-        //como checkear que un usuario logueado no acceda al login
-        $this->medicView->showLogin();
-    }
-    function logOut()
-    {
-        $this->authHelper->logout();
-    }
-
-    function login()
-    {
-        if (!empty($_POST['user']) && !empty($_POST['password'])) {
-            $user = $_POST['user'];
-            $password = $_POST['password'];
-
-            $user = $this->medicModel->getUser($user);
-
-            if ($user && ($password == $user->pass)) {
-                $this->authHelper->login($user);
-                header("Location: " . turnos);
-            } else {
-                $this->medicView->showError("Usuario o contraseña inválida");
-            }
-        } else {
-            echo ('error');
-        }
-    }
-
     function showSearchTurns()
     {
         //barrera del login

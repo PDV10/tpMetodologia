@@ -15,18 +15,12 @@ class MedicView
         $this->smarty->display("templates/medico_home/showHome.tpl");
     }
 
-
-    function showLogin()
-    {
-        $this->smarty->display("templates/login_prof/showLogin.tpl");
-    }
-
     function showError($msg)
     {
         $this->smarty->assign("msg", $msg);
         $this->smarty->display("templates/showError.tpl");
     }
-    function showViewMedic($turns,$user)
+    function showViewMedic($turns, $user)
     {
         $this->smarty->assign('turns', $turns);
         $this->smarty->assign('user', $user);
@@ -35,9 +29,9 @@ class MedicView
 
 
 
-     function showSearchTurns($searchTurns){
-         $this->smarty->assign('searchTurns', $searchTurns);
-         $this->smarty->display("templates/viewMedico.tpl");
-     }
-
+    function showSearchTurns($searchTurns)
+    {
+        $this->smarty->assign('searchTurns', $searchTurns);
+        $this->smarty->display("templates/viewMedico.tpl");
+    }
 }
