@@ -11,9 +11,8 @@ class MedicModel
     function getUser($user)
     {
         $query = $this->db->prepare(
-            'SELECT * 
-                FROM medico
-                WHERE user = ?'
+            'SELECT u.id_usuario, u.nombre, u.apellido, m.especialidad, u.user, u.pass 
+             FROM usuario u JOIN medico m ON m.id_usuario = u.id_usuario WHERE user = ?'
         );
         $query->execute([$user]);
         return $query->fetch(PDO::FETCH_OBJ);

@@ -35,7 +35,7 @@ class AuthHelper
     public function login($user)
     {
 
-        $_SESSION['USER_ID'] = $user->id_medico;
+        $_SESSION['USER_ID'] = $user->id_usuario;
         $_SESSION['USER_EMAIL'] = $user->user;
 
         /** $$ CUANDO SE ESTABILICE LA BBDD (TPM-103)
