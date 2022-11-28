@@ -62,6 +62,11 @@ switch ($params[0]) {
     case 'searchTurns':
         $medicController->showSearchTurns();
         break;
+    case 'searchTurnsLikeSecretaria':
+        if (isset($params[1])) {
+            $secretaryController->showFilteredShifts($params[1]);
+        }
+        break;
     case 'listarMedicos':
         $secretaryController->showListMedics();
         break;

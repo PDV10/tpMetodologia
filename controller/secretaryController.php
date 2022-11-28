@@ -36,9 +36,30 @@ class SecretaryController
         }
     }
 
+    function showFilteredShifts($idMedic)
+    {
+        $this->authHelper->checkLoggedIn(SECRETARIA);
+
+        if (
+            !empty($_GET["inputDesde"]) &&
+            !empty($_GET["inputHasta"])  &&
+            !empty($_GET["parteDelDia"])
+        ) {
+            $dateUntil = $_REQUEST['inputDesde'];
+            $dateSince = $_REQUEST['inputHasta'];
+            $partOfDay = $_REQUEST['parteDelDia'];
+       
+        $medic = $this->secretaryModel->getMedic($idMedic);
+        $turns = $this->secretaryModel->getFilteredShifts($idMedic, $dateUntil, $dateSince, $partOfDay);
+        $this->secretaryView->showListFilteredShifts($turns, $medic);
+        } else {
+            $this->errorView->showError('Verificar que los campos esten completos', 'listarMedicosBuscados');
+        }
+    }
+
     function showListMedics(){
-        $medicos = $this->secretaryModel->getMedics($_SESSION['USER_ID']);
-        $this->secretaryView->showListMedics($medicos);
+        $medic = $this->secretaryModel->getMedics($_SESSION['USER_ID']);
+        $this->secretaryView->showListMedics($medic);
     }
 
     function test(){

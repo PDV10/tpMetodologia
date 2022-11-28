@@ -5,7 +5,7 @@ class MedicModel
 
     function __construct()
     {
-        $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_turno_facil;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_turno_facil_v2;charset=utf8', 'root', '');
     }
 
     function getUser($user)
@@ -20,7 +20,12 @@ class MedicModel
 
     function getTurns($user_id)
     {
-        $query = $this->db->prepare('SELECT * FROM turno t JOIN paciente p ON t.id_paciente = p.id_paciente WHERE t.id_medico = ?');
+        $query = $this->db->prepare('SELECT * 
+                                     FROM turno t 
+                                     JOIN paciente p 
+                                     ON t.id_paciente = p.id_paciente 
+                                     WHERE t.id_medico = ?
+                                     ORDER BY t.dia');
         $query->execute([$user_id]);
 
         $turns = $query->fetchAll(PDO::FETCH_OBJ);
@@ -29,7 +34,13 @@ class MedicModel
 
     function getSearchTurns($id_user, $dateUntil, $dateSince, $partOfDay)
     {
-        $query = $this->db->prepare('SELECT * FROM turno t JOIN paciente p ON t.id_paciente = p.id_paciente WHERE t.id_medico = ? AND t.tipo_turno = ?  AND t.dia BETWEEN ? and  ? ');
+        $query = $this->db->prepare('SELECT * 
+                                     FROM turno t 
+                                     JOIN paciente p 
+                                     ON t.id_paciente = p.id_paciente 
+                                     WHERE t.id_medico = ? AND t.tipo_turno = ?  
+                                     AND t.dia BETWEEN ? and  ? 
+                                     ORDER BY t.dia');
         $query->execute([$id_user, $partOfDay, $dateUntil, $dateSince]);
 
         $turns = $query->fetchAll(PDO::FETCH_OBJ);

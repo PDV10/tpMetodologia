@@ -21,4 +21,10 @@ class SecretaryView
         $this->smarty->assign('medicos', $medicos);
         $this->smarty->display("templates/secretaria_home/showListMedics.tpl");
     }
+    
+    function showListFilteredShifts($turns, $user){
+        $this->smarty->assign('turns', $turns);
+        $this->smarty->assign('user', $user);
+        $this->smarty->display("templates/medico_home/viewMedico.tpl");
+    }
 }
