@@ -9,4 +9,11 @@ class SecretaryView
     {
         $this->smarty = new Smarty();
     }
+
+    function showTurnsByMedic($turns, $user)
+    {
+        $this->smarty->assign('turns', $turns);
+        $this->smarty->assign('user', $user);
+        $this->smarty->display("templates/medico_home/viewMedico.tpl");
+    }
 }

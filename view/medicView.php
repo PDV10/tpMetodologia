@@ -15,11 +15,6 @@ class MedicView
         $this->smarty->display("templates/medico_home/showHome.tpl");
     }
 
-    function showError($msg)
-    {
-        $this->smarty->assign("msg", $msg);
-        $this->smarty->display("templates/showError.tpl");
-    }
     function showViewMedic($turns, $user)
     {
         $this->smarty->assign('turns', $turns);

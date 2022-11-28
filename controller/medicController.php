@@ -4,12 +4,14 @@ require_once('model/medicModel.php');
 require_once('view/medicView.php');
 /* helpers */
 require_once('helpers/auth.helper.php');
+require_once('view/errorView.php');
 
 class MedicController
 {
     private $medicView;
     private $medicModel;
     private $authHelper;
+    private $errorView;
 
     function __construct()
     {
@@ -58,12 +60,7 @@ class MedicController
                 $this->medicView->showViewMedic($searchTurns, $user);
             }
         } else {
-            $this->medicView->showError("Error, CAMPOS INCOMPLETOS!");
+            $this->errorView->showError("Error, CAMPOS INCOMPLETOS! xdxd", 'LogIn');
         }
-    }
-
-    function showError()
-    {
-        $this->medicView->showError("Error 404 URL no reconocida");
     }
 }

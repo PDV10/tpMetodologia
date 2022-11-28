@@ -13,36 +13,36 @@
     </div>
 </div>
 <div class="container mb-5 mt-5">
-    
+
     <form action="searchTurns" class="d-flex flex-column justify-content-center shadow-lg rounded-end p-2 mb-3">
         <h4 class="p-2">Filtrar Turnos Por:</h4>
         <div class="d-flex gap-3 p-2 align-items-center justify-content-center ">
-    
+
             <div class="form-check">
                 {* porque hay dos inputs??? *}
-                <input class="form-check-input" type="radio" name="parteDelDia" >
+                <input class="form-check-input" type="radio" name="parteDelDia">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Mañana
                 </label>
-                <input value="m" class="form-check-input" type="radio" name="parteDelDia" >
+                <input value="m" class="form-check-input" type="radio" name="parteDelDia">
             </div>
             <div class="form-check">
                 {* porque hay dos inputs??? *}
-                <input class="form-check-input" type="radio" name="parteDelDia" >
+                <input class="form-check-input" type="radio" name="parteDelDia">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Tarde
                 </label>
-                <input value="t"  class="form-check-input" type="radio" name="parteDelDia" >
+                <input value="t" class="form-check-input" type="radio" name="parteDelDia">
             </div>
             <div class="d-flex gap-3 align-items-center">
                 <label for="">Desde</label>
-                <input type="date" name="inputDesde" >
+                <input type="date" name="inputDesde">
 
                 <label for="">Hasta</label>
-                <input type="date" name="inputHasta" >
-                
+                <input type="date" name="inputHasta">
+
             </div>
-            
+
         </div>
         <button class="btn btn-secondary btn-sm mt-2" type="submit" href='sendFilter'>
             Buscar
@@ -51,36 +51,50 @@
     </form>
     <h3 class="mt-5 p-2">Turnos: </h3>
     {if {$turns|count} > 0}
-          <table class="table table-hover mb-5 text-center">
+    <table class="table table-hover mb-5 text-center">
         <thead>
             <tr>
                 <th scope="col">Hora</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Paciente</th>
+                {if $smarty.session.USER_ROL == SECRETARIA}
+                <th scope="col"></th>
+                {/if}
             </tr>
         </thead>
         <tbody>
             {foreach from=$turns item=$turn}
-                <tr>
-                    <td>{$turn->hora}</td>
-                    <td>{$turn->dia}</td>
-                    <td>{$turn->nombre} {$turn->apellido}</td>
-                </tr>
+            <tr>
+                <td>{$turn->hora}</td>
+                <td>{$turn->dia}</td>
+                <td>{$turn->nombre} {$turn->apellido}</td>
+                {if $smarty.session.USER_ROL == SECRETARIA}
+                <td>
+
+                    <a href="eliminarTurno/{{$turn->id_turno}}">
+                        <button class="btn btn-sm bg-danger m-2">
+                            X
+                        </button>
+                    </a>
+
+                </td>
+                {/if}
+            </tr>
             {/foreach}
         </tbody>
     </table>
     {else}
-        <div class="card text-center text-white bg-dark mb-5 mt-5">
-            <div class="card-header">
-                <h2> Dr. {$user->nombre} {$user->apellido}</h2>
-            </div>
-            <div class="card-body">
-                <h4 class="error mb-5">Por ahora no tiene turnos asignados.</h4>
-                   <footer class="blockquote-footer"> <cite title="Source Title">Que tenga un gran dia.</cite></footer>
-            </div>
+    <div class="card text-center text-white bg-dark mb-5 mt-5">
+        <div class="card-header">
+            <h2> Dr. {$user->nombre} {$user->apellido}</h2>
         </div>
+        <div class="card-body">
+            <h4 class="error mb-5">Por ahora no tiene turnos asignados.</h4>
+            <footer class="blockquote-footer"> <cite title="Source Title">Que tenga un gran dia.</cite></footer>
+        </div>
+    </div>
     {/if}
-  
+
 </div>
 
 {include file="templates/showFooter.tpl"}

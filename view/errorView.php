@@ -10,9 +10,10 @@ class ErrorView
         $this->smarty = new Smarty();
     }
 
-    function showError($msg)
+    function showError($msg, $path)
     {
         $this->smarty->assign("msg", $msg);
+        $this->smarty->assign("path", $path);
         $this->smarty->display("templates/showError.tpl");
     }
 }

@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * SHOWERROR
+ */
+require_once('view/errorView.php');
+
+/**
  * CONTROLLERS
  */
 require_once('controller/medicController.php');
@@ -27,6 +32,8 @@ if (!empty($_REQUEST['action'])) {
 
 $params = explode("/", $action);
 
+//SHOWERROR
+$errorView = new ErrorView();
 //Controladores
 $medicController = new MedicController();
 $secretaryController = new SecretaryController();
@@ -39,6 +46,11 @@ switch ($params[0]) {
     case 'turnos':
         $medicController->showViewMedic();
         break;
+    case 'turnos-medico':
+        if (isset($params[1])) {
+            $secretaryController->showTurnsByMedic(isset($params[1]));
+        }
+        break;
     case 'logOut':
         $loginController->logOut();
         break;
@@ -49,6 +61,6 @@ switch ($params[0]) {
         $medicController->showSearchTurns();
         break;
     default:
-        $medicController->showError();
+        $errorView->showError('ruta incorrecta', '');
         break;
 }

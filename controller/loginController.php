@@ -1,4 +1,5 @@
 <?php
+require_once('view/errorView.php');
 
 require_once('view/loginView.php');
 require_once('model/userModel.php');
@@ -7,6 +8,7 @@ class LoginController
 {
     private $model;
     private $view;
+    private $errorView;
     private $authHelper;
 
 
@@ -15,6 +17,7 @@ class LoginController
         $this->view = new LoginView();
         $this->model = new UserModel();
         $this->authHelper = new AuthHelper();
+        $this->errorView = new ErrorView();
     }
 
     function showLogin()
@@ -38,9 +41,14 @@ class LoginController
 
             if ($user && ($password == $user->pass)) {
                 $this->authHelper->login($user);
-                header("Location: " . turnos);
+                if ($user->tipo == MEDICO) {
+                    header("Location: " . turnos);
+                } else if ($user->tipo == SECRETARIA) {
+                    // ACA IRIA LA FUNCIONALIDAD DE LISTAR
+                    header("Location: " . BASE_URL . "turnos-medico/1");
+                }
             } else {
-                $this->view->showError("Usuario o contraseña inválida");
+                $this->errorView->showError("Usuario o contraseña inválida", '');
             }
         } else {
             echo ('error');

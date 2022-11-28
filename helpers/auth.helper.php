@@ -25,7 +25,12 @@ class AuthHelper
             header("Location: " . BASE_URL . 'profesionales');
             die();
         } else if ($_SESSION['USER_ROL'] != $rol) {
-            $this->errorView->showError("Usted no tiene permisos suficientes");
+            if ($rol == MEDICO) {
+                $this->errorView->showError("Usted no tiene permisos suficientes", "turnos");
+            } else if ($rol == SECRETARIA) {
+                //ACA TAMBIEN IRIA LA LISTA DE MEDICOS COMO PATH
+                $this->errorView->showError("Usted no tiene permisos suficientes", "");
+            }
             die();
         }
     }
