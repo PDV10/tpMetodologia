@@ -11,7 +11,7 @@ class SecretaryModel
     function getMedic($idUser)
     {
         $query = $this->db->prepare(
-            'SELECT u.id_usuario, u.nombre, u.apellido, m.especialidad, m.secretaria, u.user, u.pass, u.tipo
+            'SELECT u.id_usuario, u.nombre, u.apellido, m.especialidad, m.secretaria, u.user, u.pass, u.tipo, m.imagen
              FROM usuario u JOIN medico m ON m.id_usuario = u.id_usuario WHERE m.id_usuario = ?'
         );
         $query->execute([$idUser]);
@@ -48,7 +48,7 @@ class SecretaryModel
 
     function getMedics($id){
         $query = $this->db->prepare(
-                                    'SELECT u.id_usuario, u.nombre, u.apellido, m.especialidad
+                                    'SELECT u.id_usuario, u.nombre, u.apellido, m.especialidad,m.imagen
                                      FROM usuario u
                                      JOIN medico m ON m.id_usuario = u.id_usuario 
                                      WHERE m.secretaria = ?');

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 27-11-2022 a las 16:53:43
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 28-11-2022 a las 21:06:27
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,28 +30,29 @@ SET time_zone = "+00:00";
 CREATE TABLE `medico` (
   `id_usuario` int(11) NOT NULL,
   `especialidad` varchar(50) NOT NULL,
-  `secretaria` int(11) DEFAULT NULL
+  `secretaria` int(11) DEFAULT NULL,
+  `imagen` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `medico`
 --
 
-INSERT INTO `medico` (`id_usuario`, `especialidad`, `secretaria`) VALUES
-(1, 'Anatomía Patológica', 16),
-(2, 'Cirugía General', 17),
-(3, 'Crugía General', 18),
-(4, 'Cirugía General', 16),
-(5, 'Pediatra', 17),
-(6, 'Gastronterologo', 18),
-(7, 'Medico Mundialista', 16),
-(8, 'Obstetra', 17),
-(9, 'Cirugía General', 18),
-(10, 'Ginecologa', 16),
-(11, 'Cardiologia', 17),
-(12, 'Obstetra', 18),
-(13, 'Ginecologa', 16),
-(14, 'Pediatra', 17);
+INSERT INTO `medico` (`id_usuario`, `especialidad`, `secretaria`, `imagen`) VALUES
+(1, 'Anatomía Patológica', 16, ''),
+(2, 'Cirugía General', 17, ''),
+(3, 'Crugía General', 18, ''),
+(4, 'Cirugía General', 16, ''),
+(5, 'Pediatra', 17, ''),
+(6, 'Gastronterologo', 18, ''),
+(7, 'Medico Mundialista', 16, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Narig%C3%B3n_Bilardo_1986.jpg'),
+(8, 'Obstetra', 17, ''),
+(9, 'Cirugía General', 18, ''),
+(10, 'Ginecologa', 16, ''),
+(11, 'Cardiologia', 17, ''),
+(12, 'Obstetra', 18, ''),
+(13, 'Ginecologa', 16, ''),
+(14, 'Pediatra', 17, '');
 
 -- --------------------------------------------------------
 
@@ -212,7 +213,6 @@ INSERT INTO `turno` (`id_turno`, `id_medico`, `id_paciente`, `dia`, `hora`, `tip
 (74, 2, 1, '2023-02-16', '12:20:00', 'm'),
 (75, 2, 17, '2023-03-09', '18:20:00', 't'),
 (76, 1, 11, '2022-12-15', '18:20:00', 't'),
-(77, 2, 12, '2022-11-24', '18:20:00', 't'),
 (78, 1, 13, '2023-01-26', '18:20:00', 't'),
 (79, 2, 14, '2023-04-13', '17:40:00', 't'),
 (80, 1, 15, '2023-01-27', '08:20:00', 'm'),

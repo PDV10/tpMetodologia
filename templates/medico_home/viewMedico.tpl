@@ -9,7 +9,11 @@
         <p>{$user->especialidad}</p>
     </div>
     <div class="container">
-        <img src="assets/img/Medico.jpg" alt="salvador bilardo" width=100px class="pt-2 rounded-circle">
+        {if $user->imagen != null }
+            <img src="{{$user->imagen}}" alt="salvador bilardo" width=100px class="pt-2 rounded-circle">
+        {else}
+            <img src="assets/img/Medico.jpg" alt="salvador bilardo" width=100px class="pt-2 rounded-circle">
+        {/if}
     </div>
 </div>
 <div class="container">
