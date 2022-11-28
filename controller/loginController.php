@@ -45,7 +45,8 @@ class LoginController
                     header("Location: " . turnos);
                 } else if ($user->tipo == SECRETARIA) {
                     // ACA IRIA LA FUNCIONALIDAD DE LISTAR
-                    header("Location: " . BASE_URL . "turnos-medico/1");
+                    header("Location: " . ListarMedicos);
+                    //header("Location: " . BASE_URL . "turnos-medico/1");
                 }
             } else {
                 $this->errorView->showError("Usuario o contraseña inválida", '');

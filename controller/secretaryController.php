@@ -22,7 +22,7 @@ class SecretaryController
     }
 
     function showTurnsByMedic($idMedic)
-    {
+    {   
         $this->authHelper->checkLoggedIn(SECRETARIA);
 
         $medic = $this->secretaryModel->getMedic($idMedic);
@@ -32,7 +32,16 @@ class SecretaryController
             $this->secretaryView->showTurnsByMedic($turns, $medic);
         } else {
             //TAREA PATO agregar el segundo paramtro que seria el id del medico para listarlo
-            $this->errorView->showError('Este medico no le pertenece', '');
+            $this->errorView->showError('Este medico no le pertenece', 'listarMedicos');
         }
+    }
+
+    function showListMedics(){
+        $medicos = $this->secretaryModel->getMedics($_SESSION['USER_ID']);
+        $this->secretaryView->showListMedics($medicos);
+    }
+
+    function test(){
+        echo("adasd");
     }
 }

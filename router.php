@@ -23,6 +23,8 @@ define('MEDICO', 'M');
  */
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 define('turnos', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/turnos');
+define('ListarMedicos', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/listarMedicos');
+
 
 if (!empty($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
@@ -48,7 +50,7 @@ switch ($params[0]) {
         break;
     case 'turnos-medico':
         if (isset($params[1])) {
-            $secretaryController->showTurnsByMedic(isset($params[1]));
+            $secretaryController->showTurnsByMedic($params[1]);
         }
         break;
     case 'logOut':
@@ -59,6 +61,9 @@ switch ($params[0]) {
         break;
     case 'searchTurns':
         $medicController->showSearchTurns();
+        break;
+    case 'listarMedicos':
+        $secretaryController->showListMedics();
         break;
     default:
         $errorView->showError('ruta incorrecta', '');

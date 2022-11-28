@@ -16,4 +16,9 @@ class SecretaryView
         $this->smarty->assign('user', $user);
         $this->smarty->display("templates/medico_home/viewMedico.tpl");
     }
+
+    function showListMedics($medicos){
+        $this->smarty->assign('medicos', $medicos);
+        $this->smarty->display("templates/secretaria_home/showListMedics.tpl");
+    }
 }

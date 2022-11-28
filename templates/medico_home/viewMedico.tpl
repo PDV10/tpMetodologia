@@ -19,7 +19,6 @@
         <div class="d-flex gap-3 p-2 align-items-center justify-content-center ">
 
             <div class="form-check">
-                {* porque hay dos inputs??? *}
                 <input class="form-check-input" type="radio" name="parteDelDia">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Mañana
@@ -27,7 +26,6 @@
                 <input value="m" class="form-check-input" type="radio" name="parteDelDia">
             </div>
             <div class="form-check">
-                {* porque hay dos inputs??? *}
                 <input class="form-check-input" type="radio" name="parteDelDia">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Tarde

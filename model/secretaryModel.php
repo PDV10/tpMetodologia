@@ -26,4 +26,14 @@ class SecretaryModel
         $turns = $query->fetchAll(PDO::FETCH_OBJ);
         return  $turns;
     }
+
+    function getMedics($id){
+        $query = $this->db->prepare(
+                                    'SELECT u.id_usuario, u.nombre, u.apellido, m.especialidad
+                                     FROM usuario u
+                                     JOIN medico m ON m.id_usuario = u.id_usuario 
+                                     WHERE m.secretaria = ?');
+        $query->execute([$id]);
+        return  $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }
