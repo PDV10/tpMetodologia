@@ -14,6 +14,7 @@ class SecretaryView
     {
         $this->smarty->assign('turns', $turns);
         $this->smarty->assign('user', $user);
+        $this->smarty->assign('button', false );
         $this->smarty->display("templates/medico_home/viewMedico.tpl");
     }
 
@@ -25,6 +26,7 @@ class SecretaryView
     function showListFilteredShifts($turns, $user){
         $this->smarty->assign('turns', $turns);
         $this->smarty->assign('user', $user);
+        $this->smarty->assign('button', true );
         $this->smarty->display("templates/medico_home/viewMedico.tpl");
     }
 }

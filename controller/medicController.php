@@ -14,7 +14,8 @@ class MedicController
     private $errorView;
 
     function __construct()
-    {
+    {   
+        $this->errorView = new ErrorView();
         $this->medicView = new MedicView();
         $this->medicModel = new MedicModel();
         $this->authHelper = new AuthHelper();
@@ -54,13 +55,13 @@ class MedicController
             if (!empty($_SESSION['USER_ID'])) {
                 $id_user = $_SESSION['USER_ID'];
 
-                $searchTurns = $this->medicModel->getSearchTurns($id_user, $dateUntil, $dateSince, $partOfDay);
+                $turns = $this->medicModel->getSearchTurns($id_user, $dateUntil, $dateSince, $partOfDay);
                 $user = $this->medicModel->getUser($_SESSION['USER_EMAIL']);
 
-                $this->medicView->showViewMedic($searchTurns, $user);
+                $this->medicView->showSearchTurns($turns, $user);
             }
         } else {
-            $this->errorView->showError("Error, CAMPOS INCOMPLETOS! xdxd", 'LogIn');
+            $this->errorView->showError('Error, CAMPOS INCOMPLETOS! xdxd', 'LogIn');
         }
     }
 }
