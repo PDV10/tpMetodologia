@@ -70,6 +70,11 @@ switch ($params[0]) {
     case 'listarMedicos':
         $secretaryController->showListMedics();
         break;
+    case 'eliminarTurno':
+        if (isset($params[1])) {
+            $secretaryController->deleteTurn();
+        }
+        break;
     default:
         $errorView->showError('ruta incorrecta', '');
         break;

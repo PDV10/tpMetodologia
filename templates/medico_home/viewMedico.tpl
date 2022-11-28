@@ -66,11 +66,32 @@
                     <td>{$turn->nombre} {$turn->apellido}</td>
                      {if $smarty.session.USER_ROL == SECRETARIA}
                     <td>
-                    <a href="eliminarTurno/{{$turn->id_turno}}">
-                        <button class="btn btn-sm bg-danger m-2">
-                            X
+                    
+                        <button class="btn btn-sm bg-danger m-2" data-bs-toggle="modal" data-bs-target="#modal1">
+                        <i class="bi bi-trash3-fill"></i>
                         </button>
-                    </a>
+                        <div class="modal fade" id="modal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Seguro que quieres eliminar el turno?</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Si eliminas el turno, se eliminara permanentemente.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <form action="eliminarTurno/">
+                                        <input type="hidden" name="idMedic" value="{$turn->id_medico}" >
+                                        <input type="hidden" name="idTurn" value="{$turn->id_turno}" >
+                                        <input type="submit" value="Si, deseo eliminar turno" class="btn btn-primary">
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </td>
                 {/if}
                 </tr>

@@ -21,8 +21,7 @@ class SecretaryController
         $this->errorView = new ErrorView();
     }
 
-    function showTurnsByMedic($idMedic)
-    {   
+    function showTurnsByMedic($idMedic){   
         $this->authHelper->checkLoggedIn(SECRETARIA);
 
         $medic = $this->secretaryModel->getMedic($idMedic);
@@ -65,4 +64,19 @@ class SecretaryController
     function test(){
         echo("adasd");
     }
+
+    function deleteTurn(){
+        $this->authHelper->checkLoggedIn(SECRETARIA);
+
+        if(!empty($_GET["idMedic"]) && !empty($_GET["idTurn"])){
+            
+            $idTurn = $_REQUEST["idTurn"];
+            $idMedic = $_REQUEST["idMedic"];
+            $this->secretaryModel->deleteTurn($idTurn,$idMedic);
+            $this->showTurnsByMedic($idMedic);
+        }else{
+            $this->errorView->showError('¡ERROR! No se encuentra el Turno a eliminar', 'listarMedicosBuscados');
+        }
+    }
+
 }

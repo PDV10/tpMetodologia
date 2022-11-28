@@ -55,4 +55,12 @@ class SecretaryModel
         $query->execute([$id]);
         return  $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    function deleteTurn($idTurn,$idMedic){
+        $query = $this->db->prepare(
+            'DELETE 
+             FROM turno 
+             WHERE id_turno = ? AND id_medico = ?');
+        $query->execute([$idTurn,$idMedic]);
+    }
 }
