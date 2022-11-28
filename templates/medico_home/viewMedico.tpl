@@ -21,11 +21,11 @@
     {/if}
         <label for="">Filtrar Turnos</label>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="parteDelDia" id="flexRadioDefault1">
+            <input class="form-check-input" type="radio" name="parteDelDia" id="flexRadioDefault1"> 
             <label class="form-check-label" for="flexRadioDefault1">
                 Mañana
             </label>
-            <input value="m" class="form-check-input" type="radio" name="parteDelDia" id="flexRadioDefault1">
+            <input value="m" class="form-check-input" type="radio" name="parteDelDia" id="flexRadioDefault1" checked>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="parteDelDia" id="flexRadioDefault1">

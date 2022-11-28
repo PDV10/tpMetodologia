@@ -5,7 +5,7 @@ class SecretaryModel
 
     function __construct()
     {
-        $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_turno_facil_v2;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_turno_facil;charset=utf8', 'root', '');
     }
 
     function getMedic($idUser)

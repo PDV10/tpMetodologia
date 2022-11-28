@@ -14,8 +14,7 @@ class MedicController
     private $errorView;
 
     function __construct()
-    {   
-        $this->errorView = new ErrorView();
+    {
         $this->medicView = new MedicView();
         $this->medicModel = new MedicModel();
         $this->authHelper = new AuthHelper();
@@ -61,7 +60,7 @@ class MedicController
                 $this->medicView->showSearchTurns($turns, $user);
             }
         } else {
-            $this->errorView->showError('Error, CAMPOS INCOMPLETOS! xdxd', 'LogIn');
+            $this->errorView->showError('¡ERROR!, CAMPOS INCOMPLETOS!', 'LogIn');
         }
     }
 }
