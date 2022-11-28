@@ -14,7 +14,7 @@
 </div>
 <div class="container">
     <h5>Turnos: </h5>
-    {if $smarty.session.USER_ROL == SECRETARIA}
+    {if $smarty.session.USER_ROL == SECRETARIA }
         <form action="searchTurnsLikeSecretaria/{{$user->id_usuario}}">
     {else}
       <form action="searchTurns">
@@ -44,8 +44,14 @@
                 Buscar
                 <i class="bi bi-search"></i>
             </button>
+           
         </div>
     </form>
+    {if $button == true && $smarty.session.USER_ROL == SECRETARIA } 
+         <a class="btn btn-dark" href="turnos-medico/{{$user->id_usuario}}"> Todos Los Turnos</a>
+        {else if $button == true}
+        <a class="btn btn-dark" href="turnos"> Todos Los Turnos</a>
+    {/if} 
     {if {$turns|count} > 0}
           <table class="table table-hover mt-3">
         <thead>

@@ -19,14 +19,15 @@ class MedicView
     {
         $this->smarty->assign('turns', $turns);
         $this->smarty->assign('user', $user);
+        $this->smarty->assign('button', false );
         $this->smarty->display("templates/medico_home/viewMedico.tpl");
     }
 
-
-
-    function showSearchTurns($searchTurns)
+    function showSearchTurns($turns,$user)
     {
-        $this->smarty->assign('searchTurns', $searchTurns);
-        $this->smarty->display("templates/viewMedico.tpl");
+        $this->smarty->assign('turns', $turns);
+        $this->smarty->assign('user', $user);
+        $this->smarty->assign('button', true );
+        $this->smarty->display("templates/medico_home/viewMedico.tpl");
     }
 }
