@@ -53,7 +53,7 @@ class SecretaryController
         $turns = $this->secretaryModel->getFilteredShifts($idMedic, $dateUntil, $dateSince, $partOfDay);
         $this->secretaryView->showListFilteredShifts($turns, $medic);
         } else {
-            $this->errorView->showError('Verificar que los campos esten completos', 'listarMedicosBuscados');
+            $this->errorView->showError('Verificar que los campos esten completos', 'turnos-medico');
         }
     }
 
