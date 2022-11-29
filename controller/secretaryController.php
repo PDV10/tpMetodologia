@@ -30,7 +30,6 @@ class SecretaryController
             $turns = $this->secretaryModel->getTurnsByMedic($medic->id_usuario);
             $this->secretaryView->showTurnsByMedic($turns, $medic);
         } else {
-            //TAREA PATO agregar el segundo paramtro que seria el id del medico para listarlo
             $this->errorView->showError('Este medico no le pertenece', 'listarMedicos');
         }
     }

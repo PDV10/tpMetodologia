@@ -28,7 +28,6 @@ class AuthHelper
             if ($rol == MEDICO) {
                 $this->errorView->showError("Usted no tiene permisos suficientes", "turnos");
             } else if ($rol == SECRETARIA) {
-                //ACA TAMBIEN IRIA LA LISTA DE MEDICOS COMO PATH
                 $this->errorView->showError("Usted no tiene permisos suficientes", "");
             }
             die();
