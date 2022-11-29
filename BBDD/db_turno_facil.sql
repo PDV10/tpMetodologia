@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2022 a las 21:06:27
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.15
+-- Tiempo de generación: 29-11-2022 a las 05:59:58
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,20 +39,20 @@ CREATE TABLE `medico` (
 --
 
 INSERT INTO `medico` (`id_usuario`, `especialidad`, `secretaria`, `imagen`) VALUES
-(1, 'Anatomía Patológica', 16, ''),
-(2, 'Cirugía General', 17, ''),
-(3, 'Crugía General', 18, ''),
-(4, 'Cirugía General', 16, ''),
-(5, 'Pediatra', 17, ''),
-(6, 'Gastronterologo', 18, ''),
+(1, 'Anatomía Patológica', 16, 'https://pregna.com.ar/wp-content/uploads/cache/images/De-Zuniga-Ignacio-v2/De-Zuniga-Ignacio-v2-351193826.jpg'),
+(2, 'Cirugía General', 17, 'https://www.nacionrex.com/__export/1612055482391/sites/debate/img/2021/01/30/dramas-coreanos-de-doctores-sinopsis-recomendacion_crop1612052223301.jpg_423682103.jpg'),
+(3, 'Crugía General', 18, 'https://img.freepik.com/foto-gratis/doctor-sonriendo-ofreciendo-mano_23-2148075683.jpg?w=2000 '),
+(4, 'Cirugía General', 16, 'https://img.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7807.jpg?w=2000'),
+(5, 'Pediatra', 17, 'https://img.freepik.com/foto-gratis/retrato-medico-varon-mirando-camara-aislada-sobre-fondo-blanco_1157-52206.jpg?w=2000'),
+(6, 'Gastronterologo', 18, 'https://www.derechoenzapatillas.com/wp-content/uploads/2017/05/what-doctors-say2.jpg'),
 (7, 'Medico Mundialista', 16, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Narig%C3%B3n_Bilardo_1986.jpg'),
-(8, 'Obstetra', 17, ''),
-(9, 'Cirugía General', 18, ''),
-(10, 'Ginecologa', 16, ''),
-(11, 'Cardiologia', 17, ''),
-(12, 'Obstetra', 18, ''),
-(13, 'Ginecologa', 16, ''),
-(14, 'Pediatra', 17, '');
+(8, 'Obstetra', 17, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStc9LchMju9tRfUMJ0pEFsIqCCcS2qUz0ROQ&usqp=CAU'),
+(9, 'Cirugía General', 18, 'https://www.shutterstock.com/image-photo/young-man-doctor-medical-concept-260nw-1893728287.jpg'),
+(10, 'Ginecologa', 16, 'https://media.istockphoto.com/id/1342134434/es/foto/el-m%C3%A9dico-atento-escucha-al-paciente.jpg?s=612x612&w=0&k=20&c=67ZMg9XctQ7ZtNWGfa6p975nhHAn8djUSZ2TESAJpTg='),
+(11, 'Cardiologia', 17, 'https://img.freepik.com/foto-gratis/doctora-vistiendo-bata-laboratorio-estetoscopio-aislado_1303-29791.jpg?w=2000'),
+(12, 'Obstetra', 18, 'https://img.freepik.com/fotos-premium/retrato-atractivo-medico-arabe_21730-4085.jpg?w=2000'),
+(13, 'Ginecologo', 16, 'https://img.freepik.com/foto-gratis/doctor-brazos-cruzados-sobre-fondo-blanco_1368-5790.jpg?w=2000'),
+(14, 'Pediatra', 17, 'https://img.freepik.com/fotos-premium/doctor-escribiendo-receta_249974-119.jpg');
 
 -- --------------------------------------------------------
 
@@ -66,15 +66,6 @@ CREATE TABLE `medico_obra_social` (
   `en_servicio` tinyint(1) NOT NULL,
   `tarifa` float(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `medico_obra_social`
---
-
-INSERT INTO `medico` (`id_usuario`, `especialidad`, `secretaria`, `imagen`)
- VALUES ('1', 'Anatomía Patológica', '16', 'https://pregna.com.ar/wp-content/uploads/cache/images/De-Zuniga-Ignacio-v2/De-Zuniga-Ignacio-v2-351193826.jpg'), 
- ('2', 'Cirugía General', '17', 'https://www.nacionrex.com/__export/1612055482391/sites/debate/img/2021/01/30/dramas-coreanos-de-doctores-sinopsis-recomendacion_crop1612052223301.jpg_423682103.jpg'), 
- ('3', 'Crugía General', '18', 'https://img.freepik.com/foto-gratis/doctor-sonriendo-ofreciendo-mano_23-2148075683.jpg?w=2000 '), ('4', 'Cirugía General', '16', 'https://img.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7807.jpg?w=2000'), ('5', 'Pediatra', '17', 'https://img.freepik.com/foto-gratis/retrato-medico-varon-mirando-camara-aislada-sobre-fondo-blanco_1157-52206.jpg?w=2000'), ('6', 'Gastronterologo', '18', 'https://www.derechoenzapatillas.com/wp-content/uploads/2017/05/what-doctors-say2.jpg'), ('7', 'Medico Mundialista', '16', 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Narig%C3%B3n_Bilardo_1986.jpg'), ('8', 'Obstetra', '17', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStc9LchMju9tRfUMJ0pEFsIqCCcS2qUz0ROQ&usqp=CAU'), ('9', 'Cirugía General', '18', 'https://www.shutterstock.com/image-photo/young-man-doctor-medical-concept-260nw-1893728287.jpg'), ('10', 'Ginecologa', '16', 'https://media.istockphoto.com/id/1342134434/es/foto/el-m%C3%A9dico-atento-escucha-al-paciente.jpg?s=612x612&w=0&k=20&c=67ZMg9XctQ7ZtNWGfa6p975nhHAn8djUSZ2TESAJpTg='), ('11', 'Cardiologia', '17', 'https://img.freepik.com/foto-gratis/doctora-vistiendo-bata-laboratorio-estetoscopio-aislado_1303-29791.jpg?w=2000'), ('12', 'Obstetra', '18', 'https://img.freepik.com/fotos-premium/retrato-atractivo-medico-arabe_21730-4085.jpg?w=2000'), ('13', 'Ginecologo', '16', 'https://img.freepik.com/foto-gratis/doctor-brazos-cruzados-sobre-fondo-blanco_1368-5790.jpg?w=2000'), ('14', 'Pediatra', '17', 'https://img.freepik.com/fotos-premium/doctor-escribiendo-receta_249974-119.jpg')
 
 -- --------------------------------------------------------
 
@@ -201,7 +192,6 @@ INSERT INTO `turno` (`id_turno`, `id_medico`, `id_paciente`, `dia`, `hora`, `tip
 (79, 2, 14, '2023-04-13', '17:40:00', 't'),
 (80, 1, 15, '2023-01-27', '08:20:00', 'm'),
 (81, 1, 2, '2023-03-16', '12:20:00', 'm'),
-(82, 2, 3, '2022-12-28', '18:00:00', 't'),
 (83, 1, 4, '2023-01-25', '09:00:00', 'm'),
 (84, 1, 5, '2023-02-17', '09:00:00', 'm'),
 (85, 2, 6, '2023-04-21', '18:00:00', 't'),
@@ -278,7 +268,7 @@ INSERT INTO `usuario` (`id_usuario`, `apellido`, `nombre`, `tipo`, `user`, `pass
 (13, 'Cogliatti', 'Tomas', 'M', 'Tomas221', 'Tomas221'),
 (14, 'Jones', 'Agustin', 'M', 'agustin656', 'agustin656'),
 (16, 'Callejon', 'Fernanda', 'S', 'fer123', 'fer123'),
-(17, 'Suller', 'Silvia', 'S', 'lasilvi69', 'lasilvi69'),
+(17, 'Suller', 'Silvia', 'S', 'Silvia23', 'Silvia23'),
 (18, 'Camaño', 'Graciela', 'S', 'grace4455', 'grace4455');
 
 --
