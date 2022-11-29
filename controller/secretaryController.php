@@ -52,7 +52,7 @@ class SecretaryController
         $turns = $this->secretaryModel->getFilteredShifts($idMedic, $dateUntil, $dateSince, $partOfDay);
         $this->secretaryView->showListFilteredShifts($turns, $medic);
         } else {
-            $this->errorView->showError('Verificar que los campos esten completos', 'turnos-medico');
+            $this->errorView->showError('Verificar que los campos esten completos', 'listarMedicos');
         }
     }
 
@@ -75,7 +75,7 @@ class SecretaryController
             $this->secretaryModel->deleteTurn($idTurn,$idMedic);
             $this->showTurnsByMedic($idMedic);
         }else{
-            $this->errorView->showError('¡ERROR! No se encuentra el Turno a eliminar', 'listarMedicosBuscados');
+            $this->errorView->showError('¡ERROR! No se encuentra el Turno a eliminar', 'turnos-medico');
         }
     }
 

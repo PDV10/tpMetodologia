@@ -71,26 +71,10 @@ CREATE TABLE `medico_obra_social` (
 -- Volcado de datos para la tabla `medico_obra_social`
 --
 
-INSERT INTO `medico_obra_social` (`id_medico`, `id_obra_social`, `en_servicio`, `tarifa`) VALUES
-(1, 1, 1, 1000.00),
-(2, 1, 1, 1000.00),
-(2, 2, 1, 1000.00),
-(3, 4, 1, 1300.00),
-(3, 15, 1, 1000.00),
-(4, 1, 1, 1000.00),
-(5, 12, 1, 1500.00),
-(6, 15, 1, 1000.00),
-(7, 8, 1, 1000.00),
-(7, 12, 1, 1500.00),
-(8, 2, 1, 1000.00),
-(8, 14, 1, 2000.00),
-(9, 11, 1, 1500.00),
-(9, 12, 1, 1000.00),
-(10, 6, 1, 1000.00),
-(11, 12, 1, 1000.00),
-(12, 1, 1, 2000.00),
-(13, 5, 1, 1000.00),
-(14, 7, 1, 2000.00);
+INSERT INTO `medico` (`id_usuario`, `especialidad`, `secretaria`, `imagen`)
+ VALUES ('1', 'Anatomía Patológica', '16', 'https://pregna.com.ar/wp-content/uploads/cache/images/De-Zuniga-Ignacio-v2/De-Zuniga-Ignacio-v2-351193826.jpg'), 
+ ('2', 'Cirugía General', '17', 'https://www.nacionrex.com/__export/1612055482391/sites/debate/img/2021/01/30/dramas-coreanos-de-doctores-sinopsis-recomendacion_crop1612052223301.jpg_423682103.jpg'), 
+ ('3', 'Crugía General', '18', 'https://img.freepik.com/foto-gratis/doctor-sonriendo-ofreciendo-mano_23-2148075683.jpg?w=2000 '), ('4', 'Cirugía General', '16', 'https://img.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7807.jpg?w=2000'), ('5', 'Pediatra', '17', 'https://img.freepik.com/foto-gratis/retrato-medico-varon-mirando-camara-aislada-sobre-fondo-blanco_1157-52206.jpg?w=2000'), ('6', 'Gastronterologo', '18', 'https://www.derechoenzapatillas.com/wp-content/uploads/2017/05/what-doctors-say2.jpg'), ('7', 'Medico Mundialista', '16', 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Narig%C3%B3n_Bilardo_1986.jpg'), ('8', 'Obstetra', '17', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStc9LchMju9tRfUMJ0pEFsIqCCcS2qUz0ROQ&usqp=CAU'), ('9', 'Cirugía General', '18', 'https://www.shutterstock.com/image-photo/young-man-doctor-medical-concept-260nw-1893728287.jpg'), ('10', 'Ginecologa', '16', 'https://media.istockphoto.com/id/1342134434/es/foto/el-m%C3%A9dico-atento-escucha-al-paciente.jpg?s=612x612&w=0&k=20&c=67ZMg9XctQ7ZtNWGfa6p975nhHAn8djUSZ2TESAJpTg='), ('11', 'Cardiologia', '17', 'https://img.freepik.com/foto-gratis/doctora-vistiendo-bata-laboratorio-estetoscopio-aislado_1303-29791.jpg?w=2000'), ('12', 'Obstetra', '18', 'https://img.freepik.com/fotos-premium/retrato-atractivo-medico-arabe_21730-4085.jpg?w=2000'), ('13', 'Ginecologo', '16', 'https://img.freepik.com/foto-gratis/doctor-brazos-cruzados-sobre-fondo-blanco_1368-5790.jpg?w=2000'), ('14', 'Pediatra', '17', 'https://img.freepik.com/fotos-premium/doctor-escribiendo-receta_249974-119.jpg')
 
 -- --------------------------------------------------------
 
